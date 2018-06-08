@@ -20,7 +20,7 @@ module.exports = createArtwork;
 function createArtwork(canvas, params = {}) {
   // I've been designing my code to this aspect ratio
   // Since it's assumed it will be the one we use
-  const designAspect = 6540 / 1200;
+  const designAspect = 1920 / 1080;
 
   // But I've also been testing some other target ratios
   // in case the actual display is not what we have above for some reason
@@ -31,7 +31,7 @@ function createArtwork(canvas, params = {}) {
 
   // You can also test full screen, it will give a different look...
   const useFullscreen = defined(params.fullscreen, query.fullscreen, false);
-  const autoplay = defined(params.autoplay, query.autoplay, false);
+  const autoplay = defined(params.autoplay, query.autoplay, true);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
   renderer.sortObjects = false;
@@ -47,7 +47,7 @@ function createArtwork(canvas, params = {}) {
     scene,
     canvas,
     onFinishIntro: noop,
-    intro: false,
+    intro: true,
     audio: createAudio(),
     audioSignal: [0, 0, 0],
     sceneBounds: new THREE.Box2(),
@@ -133,7 +133,7 @@ function createArtwork(canvas, params = {}) {
       // scene.background = new THREE.Color(scene.backgroundValue);
       // repeated code ends here
 
-      const introMode = defined(opt.intro, isIntroDefault);
+      const introMode = true;
       app.intro = introMode;
 
       if (!hasInit) {
@@ -284,14 +284,14 @@ function createArtwork(canvas, params = {}) {
 
   function resize(width, height, pixelRatio) {
     // if (query.test) {
-      width = defined(width, window.innerWidth);
-      height = useFullscreen ? window.innerHeight : Math.floor(width / targetAspect);
+    width = defined(width, window.innerWidth);
+    height = useFullscreen ? window.innerHeight : Math.floor(width / targetAspect);
     // } else if (useFullscreen) {
     //   // width =
     //   width = 6540;
     //   height = window.innerHeight;
     // } else {
-      
+
     // }
 
     pixelRatio = defined(pixelRatio, window.devicePixelRatio);

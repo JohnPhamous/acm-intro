@@ -41,7 +41,7 @@ module.exports = `
   }
 
   .canvas-text {
-    font-size: 1.0vmax;
+    font-size: 3.0vmax;
     text-align: center;
     
     user-select: none;
@@ -54,7 +54,7 @@ module.exports = `
   }
 
   .canvas-big-text {
-    font-size: 2.5vmax;
+    font-size: 4.5vmax;
     text-align: center;
     width: 27vw;
     user-select: none;

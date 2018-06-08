@@ -7,14 +7,12 @@ module.exports = function(api, params = {}) {
   const bigTextEl = document.querySelector('.canvas-big-text');
 
   const texts = [
-    { preset: 'intro0', text: 'SinnerSchrader, Greenkeeper, Cobot & The AMP Project present' },
-    { preset: 'intro1', text: 'A JSConf International production' },
-    { preset: 'intro2', text: 'In cooperation with wwwtf.berlin' },
-    { preset: 'intro3', text: 'And supported by the Chrome team', shorter: true },
-    { preset: 'intro4', text: '{ live : js } Network and 2xAA' },
-    { preset: 'intro5', text: 'Nested Loops' },
-    { preset: 'intro6', text: 'Curated by Feli, Holger, Jan, Malte, Megan & Simone' },
-    { text: 'Welcome to', bigText: 'JSConf EU 2018' }
+    { preset: 'intro0', text: 'The premier computer science student organization' },
+    { preset: 'intro1', text: 'Helping you learn new technologies' },
+    { preset: 'intro2', text: 'Connecting you with industry' },
+    { preset: 'intro3', text: 'Supporting your ideas' },
+    { preset: 'intro4', text: 'Welcome to' },
+    { text: '', bigText: 'ACM' }
   ];
 
   let index = 0;

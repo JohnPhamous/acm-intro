@@ -6,8 +6,7 @@ const canvas = document.querySelector('#canvas');
 const presets = require('./scene/presets');
 
 // Create the API. You should only create this once and re-use it.
-const artwork = createArtwork(canvas, {
-});
+const artwork = createArtwork(canvas, {});
 
 // artwork.onFinishIntro = () => {
 //   artwork.transitionToPreset('default');
@@ -34,7 +33,9 @@ artwork.load().then(() => {
     } else if (key === '2') {
       artwork.transitionToPreset('ambient');
     } else if (key === '3') {
+      console.log('3');
       artwork.transitionToPreset('intro0');
     }
+    artwork.transitionToPreset('intro0');
   });
 });
